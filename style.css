@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  filter: brightness(0.8);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem 6rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 1rem 0 2rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  opacity: 0.9;
+}
+
+.bulb {
+  width: min(58vw, 430px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 10px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.4s ease;
+  box-shadow: inset 0 0 0 14px rgba(255, 255, 255, 0.02);
+}
+
+.lightup {
+  background: radial-gradient(circle at center, #fff6b0 0%, #ffe756 25%, #ffd000 55%, #ffb700 100%);
+  border-color: #ffe600;
+  box-shadow: 0 0 18px rgba(255, 230, 0, 0.4),
+    0 0 40px rgba(255, 230, 0, 0.7),
+    0 0 80px rgba(255, 170, 0, 0.9);
+}
+
+button {
+  margin-top: 2rem;
+  min-width: 150px;
+  padding: 0.9rem 2.5rem;
+  border: none;
+  border-radius: 1rem;
+  background: #fff;
+  color: #111;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.room-lit {
+  background-color: #1a1a1a;
+}
+
+body.room-lit img {
+  filter: brightness(0.75);
+}
